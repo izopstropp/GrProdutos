@@ -1,7 +1,9 @@
 
 <div class="form-group mb-3">
-    <label for="sku">SKU</label>
-    <input type="text" class="form-control" id="sku" value="{{$produto->sku}}" name="sku" placeholder="Digite o Código do Produto..." required>
+    {{-- <label for="sku">SKU</label> --}}
+    {{Form::label('SKU')}}
+    {{-- <input type="text" class="form-control" id="sku" value="{{$produto->sku}}" name="sku" placeholder="Digite o Código do Produto..." required> --}}
+    {{Form::text('name')}}
  </div>
  <div class="form-group mb-3">
     <label for="titulo">Título</label>
