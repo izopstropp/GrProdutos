@@ -13,12 +13,17 @@
         </ul>
     </div>
 @endif
-<form method="POST" enctype="multipart/form-data" action="{{route('produtos.update',[$produto->id])}}">
+{{-- <form method="POST" enctype="multipart/form-data" action="{{route('produtos.update',[$produto->id])}}"> --}}
 
-    {{ method_field('PUT') }}
-    <input type="hidden" name="id" value="{{$produto->id}}">
-    @csrf
+    {{-- {{ method_field('PUT') }} --}}
+    {{-- <input type="hidden" name="id" value="{{$produto->id}}"> --}}
+    {{-- @csrf --}}
+    {{-- @include('produtos.__form') --}}
+    {{-- <button type="submit" class="btn btn-primary">atualizar Produto</button> --}}
+    {{-- </form> --}}
+{{Form::open(['route'=>['produtos.update',$produto->id],'method'=>'put'])}}
     @include('produtos.__form')
-     <button type="submit" class="btn btn-primary">atualizar Produto</button>
-</form>
+    {{Form::submit('Editar')}}
+{{Form::close()}}
+
 @endsection

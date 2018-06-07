@@ -35,8 +35,12 @@ class ProdutosController extends Controller
         // $this->produto->titulo = $request->input('titulo');
         // $this->produto->descricao = $request->input('descricao');
         // $this->produto->preco = $request->input('preco');
-        if(Produtos::create($data)){
-            return redirect()->route('produtos.create')->with('message','Cadastrado com sucesso');
+        try{
+            Produtos::create($data);
+            return response()->json('adicionado com sucesso',200);
+        }catch(\PDOException $e){
+            // return redirect()->route('produtos.create')->with('message','Cadastrado com sucesso');
+            return response()->json($e,400);
         }
     }
 
