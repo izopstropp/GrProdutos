@@ -24,7 +24,7 @@
                 @if(file_exists("./img/produtos/".md5($produto->id).".jpg"))
                     <img src={{url("./img/produtos/".md5($produto->id).".jpg")}} alt="imagem do produto" class="img-fluid img-thumbnail">
                 @endif
-            <h4 class="text-center"><a href={{ route('produtos.show',[$produto->id]) }}>{{$produto->titulo}}</a></h4>
+            <h4 class="text-center"><a href={{ route('produtos.show',[$produto->id]) }}>{{$produto->titulo_formatted}}</a></h4>
             <div>
                 <form method="POST" action="{{route('produtos.destroy',[$produto])}}">
                         @csrf

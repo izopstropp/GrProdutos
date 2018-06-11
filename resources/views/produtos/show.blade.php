@@ -15,7 +15,8 @@ detalhes do produto
         <ul>
             <li><strong>SKU: </strong> {{$produto->sku}}</li>
             <li><strong>Preço: </strong> R$ {{number_format($produto->preco,2,',','.')}}</li>
-            <li><strong>Adicionado em: </strong> {{date('d/m/Y H:i', strtotime($produto->created_at))}}</li>
+            {{-- <li><strong>Adicionado em: </strong> {{date('d/m/Y H:i', strtotime($produto->created_at))}}</li> --}}
+            <li><strong>Adicionado em: </strong> {{$produto->created_at_formatted}}</li>
         </ul>
         <p>{{$produto->descricao}}</p>
         <a href="javascript:history.go(-1)">Voltar</a>
